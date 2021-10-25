@@ -1,0 +1,25 @@
+{
+  "name": "gpz.ninja",
+  "version": "1.0.0",
+  "description": "Website GPZ.Ninja",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tassoman/gpz.ninja.git"
+  },
+  "keywords": [
+    "kawasaki",
+    "gpz",
+    "ninja"
+  ],
+  "author": "Tassoman",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tassoman/gpz.ninja/issues"
+  },
+  "homepage": "https://github.com/tassoman/gpz.ninja#readme",
+  "packageManager": "yarn@3.1.0"
+}
