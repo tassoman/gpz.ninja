@@ -1,5 +1,5 @@
 name: quasar-deploy
-on: 
+on:
   push:
     branches:
       - master
@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifacts@v3
         with:
           name: Collect dist
-          path: dist
+          path: dist/
   j_deploy:
     needs: j_build
     runs-on: ubuntu-latest
