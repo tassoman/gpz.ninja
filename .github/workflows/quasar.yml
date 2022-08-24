@@ -1,15 +1,16 @@
 name: quasar-deploy
-on: push
-branches:
-  - master
+on: 
+  push:
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v3
       - name: Setup NodeJS 16
-        uses: actions/setup-node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
@@ -18,12 +19,13 @@ jobs:
       - name: Build with Quasar
         run: yarn quasar build
       - name: Archive artifacts
-        uses: actions/upload-artifacts
+        uses: actions/upload-artifacts@v3
         with:
           name: Collect dist
           path: dist
   deploy:
     needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "BuIlD!"
+    runs-on: ubuntu-latest
+    steps:
+        - name: prova
+          run: echo "BuIlD!"
