@@ -1,6 +1,5 @@
 name: quasar-deploy
-on:
-  - push
+on: [ push ]
   branches:
     - main
 jobs:
