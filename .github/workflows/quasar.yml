@@ -19,7 +19,7 @@ jobs:
       - name: Build with Quasar
         run: yarn quasar build
       - name: Archive artifacts
-        uses: actions/upload-pages-artifacts@v1
+        uses: actions/upload-pages-artifact@v1
   deploy:
     needs: build
     runs-on: ubuntu-latest
