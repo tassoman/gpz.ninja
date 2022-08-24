@@ -1,0 +1,30 @@
+name: quasar-deploy
+on:
+  - push
+  branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout
+      - name: Setup NodeJS 16
+        uses: actions/setup-node
+        with:
+          node-version: 16
+          cache: yarn
+      - name: Install Yarn
+        run: yarn install
+      - name: Build with Quasar
+        run: yarn quasar build
+      - name: Archive artifacts
+        uses: actions/upload-artifacts
+        with:
+          name: Collect dist
+          path: dist
+  deploy:
+    needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "BuIlD!"
