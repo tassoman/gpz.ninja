@@ -29,3 +29,5 @@ jobs:
     steps:
       - name: prova
         run: echo "BuIlD!"
+      - name: prova2
+        run: echo "prova2"
