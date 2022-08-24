@@ -27,5 +27,5 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-        - name: prova
-          run: echo "BuIlD!"
+      - name: prova
+        run: echo "BuIlD!"
