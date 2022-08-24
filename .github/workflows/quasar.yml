@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build:
+  j_build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,8 +23,8 @@ jobs:
         with:
           name: Collect dist
           path: dist
-  deploy:
-    needs: build
+  j_deploy:
+    needs: j_build
     runs-on: ubuntu-latest
     steps:
       - name: prova
