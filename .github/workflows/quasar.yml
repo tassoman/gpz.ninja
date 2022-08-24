@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  j_build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,15 +19,17 @@ jobs:
       - name: Build with Quasar
         run: yarn quasar build
       - name: Archive artifacts
-        uses: actions/upload-artifacts@v3
-        with:
-          name: Collect dist
-          path: dist/
-  j_deploy:
-    needs: j_build
+        uses: actions/upload-pages-artifacts@v1
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: prova
-        run: echo "BuIlD!"
-      - name: prova2
-        run: echo "prova2"
+      - name: Deploy to GH Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
